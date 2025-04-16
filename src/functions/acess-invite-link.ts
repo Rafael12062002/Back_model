@@ -1,5 +1,3 @@
-import { db } from '../drizzle/client'
-import { subscription } from '../drizzle/schema/subscription'
 import { redis } from '../redis/client'
 
 interface AccesInviteLinkParams {

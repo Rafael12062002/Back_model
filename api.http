@@ -2,10 +2,27 @@ POST http://localhost:3333/subscription
 Content-Type: application/json
 
 {
-    "name":"Diego Fernandes",
-    "email":"diego@gmail.com"
+    "name":"Diego Fernandes 2",
+    "email":"indica2@gmail.com",
+    "referrer": "41a9e5a1-c029-470d-9b85-3e34da30c12b"
 }
 
 ###
 
-GET http://localhost:3333/invites/tiobara123
+GET http://localhost:3333/invites/41a9e5a1-c029-470d-9b85-3e34da30c12b
+
+###
+
+GET http://localhost:3333/subscribers/41a9e5a1-c029-470d-9b85-3e34da30c12b/ranking/clicks
+
+###
+
+GET http://localhost:3333/subscribers/41a9e5a1-c029-470d-9b85-3e34da30c12b/ranking/count
+
+###
+
+GET http://localhost:3333/subscribers/41a9e5a1-c029-470d-9b85-3e34da30c12b/ranking/position
+
+###
+
+GET http://localhost:3333/ranking

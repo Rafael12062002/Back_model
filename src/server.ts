@@ -11,7 +11,11 @@ import {
   validatorCompiler,
 } from 'fastify-type-provider-zod'
 import { env } from './env'
-import { acessInviteLinkRoute } from './routes/acess-invite-link'
+import { acessInviteLinkRoute } from './routes/acess-invite-link-route'
+import { getRankingRoute } from './routes/get-ranking-route'
+import { getSubscriberInviteClickRoutes } from './routes/get-subscriber-invite-clicks-route'
+import { getSubscriberInviteCountRoutes } from './routes/get-subscriber-invites-count-route'
+import { getSubscriberRankingPositionRoute } from './routes/get-subscriber-ranking-position-route'
 import { subscribeToEventRoute } from './routes/subscribe-to-event-route'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
@@ -37,7 +41,10 @@ app.register(fastifySwaggerUi, {
 
 app.register(subscribeToEventRoute)
 app.register(acessInviteLinkRoute)
-
+app.register(getSubscriberInviteClickRoutes)
+app.register(getSubscriberInviteCountRoutes)
+app.register(getSubscriberRankingPositionRoute)
+app.register(getRankingRoute)
 app.get('/', async (request, reply) => {
   return { message: 'Servidor está funcionando' }
 })
